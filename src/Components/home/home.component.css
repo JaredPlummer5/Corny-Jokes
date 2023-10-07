@@ -1,0 +1,92 @@
+/* General styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Button styling */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 2rem; /* Use relative units like rem for padding and margin */
+}
+
+.fetch-button {
+  padding: 1rem 2rem; /* Adjusted padding */
+  font-size: 1rem; /* Use rem for font sizes */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+.fetch-button:hover {
+  transform: scale(1.1);
+}
+
+/* Joke container styling */
+.joke-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem; /* Added padding */
+}
+
+.joke {
+  background-color: white;
+  padding: 1.5rem; /* Adjusted padding */
+  margin: 1rem; /* Adjusted margin */
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 80%; /* Adjusted width */
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .joke {
+    width: 95%; /* Full width on small screens */
+  }
+}
+
+/* Loading Section Styling */
+.center-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* or you can use a specific height */
+  padding: 1rem; /* Added padding */
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

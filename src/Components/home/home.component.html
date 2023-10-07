@@ -1,0 +1,15 @@
+
+<div class="button-container">
+  <button (click)="fetchData()" class="fetch-button">Get Jokes</button>
+</div>
+
+<div *ngIf="jokes && jokes.length > 0; else loading" class="joke-container">
+  <div *ngFor="let joke of jokes" class="joke">
+    <p>{{ joke.joke }}</p>
+  </div>
+</div>
+<ng-template #loading>
+  <div class="center-loading" *ngIf="isLoading"> <!-- Add *ngIf="isLoading" here -->
+    <div class="loader"></div>
+  </div>
+</ng-template>
